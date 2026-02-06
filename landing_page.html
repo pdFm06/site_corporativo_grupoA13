@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page — Projeto Empreendedorismo</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-soft:#F6F9FF;
+      --blue-500:#4A90E2;
+      --blue-600:#337ACC;
+      --muted:#6b7280;
+      --card:#FFFFFF;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg, #f8fbff 0%, var(--bg-soft) 100%);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Navbar */
+    .navbar{
+      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, rgba(255,255,255,0.72), rgba(255,255,255,0.6));
+      border-radius: 12px;
+      padding: .6rem 1rem;
+      box-shadow: 0 6px 24px rgba(19,38,76,0.06);
+    }
+    .nav-link{color:var(--muted); font-weight:600}
+    .nav-link:hover{color:var(--blue-600)}
+    .navbar-brand img{max-height:52px}
+
+    /* Hero */
+    .main{
+      padding: 80px 0 60px;
+      display:flex;
+      align-items:center;
+    }
+    .main .title{
+      font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+      font-weight:800;
+      line-height:1.02;
+      margin-bottom:.6rem;
+      color:#071232;
+    }
+    .main .lead{
+      color:var(--muted);
+      margin-bottom:1.25rem;
+    }
+    .btn-primary.custom{
+      background:linear-gradient(90deg,var(--blue-500),var(--blue-600));
+      border:none;
+      padding:.65rem 1.2rem;
+      box-shadow: 0 10px 30px rgba(51,122,204,0.12);
+      font-weight:700;
+      border-radius:10px;
+    }
+    .btn-outline.custom{
+      border-radius:10px;
+      padding:.55rem 1rem;
+      border:1px solid rgba(17,24,39,0.06);
+    }
+
+    /* Cards / Sections */
+    .card-surface{
+      background:var(--card);
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(14,30,64,0.06);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .card-surface:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(14,30,64,0.08) }
+
+    .section-title{
+      font-weight:700;
+      margin-bottom:18px;
+      color:#071232;
+    }
+
+    /* Participantes grid */
+    .participante{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow: 0 8px 28px rgba(11,22,43,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+      border:4px solid #fff;
+    }
+    .participante:hover{ transform:translateY(-6px) scale(1.03); box-shadow: 0 22px 40px rgba(11,22,43,0.14) }
+    .participant-card{ text-align:center }
+    .participant-name{ margin-top:.5rem; font-weight:600; color:#0f1724; font-size:.95rem }
+
+    .hero {
+      margin-bottom: 32px;
+      margin-top: 32px;
+    }
+
+    footer{
+      margin-top:40px;
+      padding:28px 0;
+      color:var(--muted);
+      text-align:center;
+      font-size:.92rem;
+    }
+
+    .muted{color:var(--muted)}
+    .caption-above{
+      text-align:center;
+      font-weight:700;
+      color:#071232;
+      margin-bottom:.5rem;
+      font-size:1.05rem;
+    }
+    .caption-above small{ display:block; font-weight:600; color:var(--muted); margin-top:4px; font-size:.9rem; }
+
+    /* Texto abaixo da imagem */
+    .caption-below{
+      text-align:center;
+      font-weight:700;
+      color:#071232;
+      margin-top:.5rem;
+      font-size:1.05rem;
+    }
+    .caption-below small{ display:block; font-weight:600; color:var(--muted); margin-top:4px; font-size:.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="container py-4">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg align-items-center">
+      <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+        <img src="img/about_us/logo-iscte.png" alt="Logo ISCTE" />
+        <div class="d-none d-md-block">
+          <div style="font-weight:800">Projeto Empreendedorismo</div>
+          <small class="muted">Universidade ISCTE</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-center gap-3">
+          <li class="nav-item"><a class="nav-link" href="landing_page.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="about_us.html">Sobre Nós</a></li>
+          <li class="nav-item">
+            <a class="btn btn-outline custom" href="#">Entrar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- HERO -->
+    <section class="hero">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Tornar a Gestão de Projetos de Construção mais fácil</h1>
+        <p class="hero-desc">
+          A OnBuild centraliza e organiza toda a informação relevante para a gestão de obras,
+          permitindo acompanhar tarefas, equipas, colaboradores, materiais e incidências
+          de forma clara e eficiente.
+        </p>
+
+        <!-- Cards -->
+        <div class="row g-3 mt-2">
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Foco principal</small>
+              <div class="section-title">Gestão Simplificada</div>
+              <p class="muted">
+                Todas as operações essenciais como projetos, recursos, equipas, acidentes, e relatórios
+                reunidas num único sistema.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Diferenciação</small>
+              <div class="section-title">Informação Crítica</div>
+              <p class="muted">
+                Consideração de acidentes e limitações dos colaboradores para atribuição
+                mais segura e adequada de tarefas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="img/landing_page/Painel Principal Demo.png" alt="Protótipo do site" class="img-fluid rounded" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HERO 2 — Experiência do utilizador -->
+  <section class="hero">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-center order-lg-1 order-2">
+        <img src="img/landing_page/Relatorios.png" class="img-fluid rounded">
+      </div>
+
+      <div class="col-lg-6 order-lg-2 order-1">
+        <h1 class="hero-title">Uma Experiência Intuitiva e Centrada no Utilizador</h1>
+        <p class="hero-desc">
+          Desde a landing page até à dashboard dinâmica, o utilizador encontra uma
+          interface clara, organizada e desenhada para facilitar a gestão diária de obras.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Primeiro contacto</small>
+              <div class="section-title">Landing Page</div>
+              <p class="muted">
+                Apresenta missão, funcionalidades e visão geral da plataforma antes do registo.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Acompanhamento</small>
+              <div class="section-title">Dashboard Dinâmica</div>
+              <p class="muted">
+                Painéis com projetos, equipas e trabalhadores em tempo real.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO 3 — Tecnologias e arquitetura -->
+  <section class="hero">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Tecnologias Modernas e Arquitetura Estruturada</h1>
+        <p class="hero-desc">
+          A OnBuild é construída com HTML5, CSS3, Bootstrap, JavaScript, PHP e MySQL,
+          garantindo eficiência, flexibilidade e compatibilidade com múltiplos dispositivos.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Arquitetura</small>
+              <div class="section-title">Padrão MVC</div>
+              <p class="muted">
+                Separação clara entre interface, lógica e dados, garantindo manutenção
+                fácil e escalabilidade do sistema.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card-surface">
+              <small class="muted">Base tecnológica</small>
+              <div class="section-title">Frontend + Backend</div>
+              <p class="muted">
+                Landing page, autenticação, dashboard e gestão interna com comunicação
+                entre cliente, servidor e base de dados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="img/landing_page/Registo.jpg" alt="Tecnologias e Arquitetura" class="img-fluid rounded mb-3" />
+        <div class="caption-below">
+          Se pretende explorar a plataforma, clique no botão em abaixo:
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+          <a href="#" class="btn btn-primary custom btn-lg" role="button" aria-label="Entrar">
+            Entrar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+      © <span id="year"></span> Projeto Empreendedorismo — ISCTE · Desenvolvido pelo Grupo A13
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
